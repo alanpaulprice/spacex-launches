@@ -1,4 +1,9 @@
 body {
-    font-size: 1rem;
-    font-family: $font-family;
+	font-size: 1rem;
+	font-family: $font-family;
+}
+
+button {
+	font-family: inherit;
+	font-size: 1em;
 }
