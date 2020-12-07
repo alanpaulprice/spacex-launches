@@ -1,0 +1,20 @@
+.button {
+	padding: 1em;
+	display: flex;
+	align-items: center;
+	border: none;
+	background-color: $primary-blue;
+	color: $color-white;
+	cursor: pointer;
+}
+
+.button.button--radius-left {
+	border-top-left-radius: 9999px;
+	border-bottom-left-radius: 9999px;
+}
+
+.button img {
+	height: 1em;
+	width: 1em;
+	margin-left: 1em;
+}
