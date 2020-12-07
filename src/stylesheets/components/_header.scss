@@ -1,0 +1,16 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__logo {
+	padding: 2rem 0;
+	margin-left: 2.5rem;
+	font-size: 1.25rem;
+	text-transform: uppercase;
+}
+
+.header__logo-image {
+	height: 1.5rem;
+}
