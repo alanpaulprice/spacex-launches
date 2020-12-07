@@ -5,3 +5,13 @@
 	padding: 0;
 	box-sizing: inherit;
 }
+
+body {
+	min-height: 100vh;
+	max-width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	box-sizing: border-box;
+	color: $font-color;
+}
