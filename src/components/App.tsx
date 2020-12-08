@@ -22,8 +22,12 @@ export default function App(): JSX.Element {
 	const [launches, setLaunches] = useState<Array<ILaunchDataItem>>([]);
 
 	useEffect(() => {
-		fetchLaunches().then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]));
+		updateLaunches();
 	}, []);
+
+	function updateLaunches(): void {
+		fetchLaunches().then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]));
+	}
 
 	return (
 		<div className="app">
