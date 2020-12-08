@@ -20,6 +20,7 @@ async function fetchLaunches()
 
 export default function App(): JSX.Element {
 	const [launches, setLaunches] = useState<Array<ILaunchDataItem>>([]);
+	const [sortDateDescending, setSortDateDescending] = useState<boolean>(false);
 
 	useEffect(() => {
 		updateLaunches();
@@ -27,6 +28,18 @@ export default function App(): JSX.Element {
 
 	function updateLaunches(): void {
 		fetchLaunches().then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]));
+	}
+
+	function toggleSortAscending(): void {
+		setSortDateDescending(!sortDateDescending);
+	}
+
+	function sortLaunches(launches: Array<ILaunchDataItem>): Array<ILaunchDataItem> {
+		if (sortDateDescending) {
+			return launches.sort((a, b) => b.launch_date_unix - a.launch_date_unix);
+		} else {
+			return launches.sort((a, b) => a.launch_date_unix - b.launch_date_unix);
+		}
 	}
 
 	return (
@@ -38,8 +51,8 @@ export default function App(): JSX.Element {
 						Filter by Year
 						<img className="header__logo-image" src={SelectIcon} alt="Select" />
 					</Button>
-					<Button onClick={() => null}>
-						Sort Descending
+					<Button onClick={toggleSortAscending}>
+						Sort {sortDateDescending ? 'Ascending' : 'Descending'}
 						<img className="header__logo-image" src={SortIcon} alt="Sort" />
 					</Button>
 				</div>
@@ -47,7 +60,7 @@ export default function App(): JSX.Element {
 					<img className="app__main-image" src={LaunchImage} alt="A rocket launch in progress" />
 				</div>
 				<div className="app__right-column">
-					<ResultsList launches={launches} />
+					<ResultsList launches={sortLaunches(launches)} />
 				</div>
 			</main>
 		</div>
