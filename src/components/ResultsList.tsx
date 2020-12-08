@@ -1,14 +1,20 @@
 import React from 'react'
 import ResultsListItem from './ResultsListItem';
+import { ILaunchDataItem } from '../interfaces/ILaunchDataItem';
 
-export default function ResultsList(): JSX.Element {
+interface IResultsListProps
+{
+	launches: Array<ILaunchDataItem>
+}
+export default function ResultsList({ launches }: IResultsListProps): JSX.Element {
 	return (
 		<ul className="results-list">
-			<ResultsListItem
-				number={1}
-				launch="FalconSat"
-				date="24th March 2006"
-				rocket="Falcon 1" />
+			{launches.map((launch, index) => <ResultsListItem
+				key={index}
+				number={launch.flight_number}
+				launch={launch.mission_name}
+				date={launch.launch_date_utc}
+				rocket={launch.rocket.rocket_name} />)}
 		</ul>
 	);
 }
