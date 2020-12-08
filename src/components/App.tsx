@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
 
 	return (
 		<div className="app">
-			<Header />
+			<Header updateLaunches={updateLaunches} />
 			<main className="app__main">
 				<div className="app__filter-sort">
 					<Button onClick={() => null}>
