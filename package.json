@@ -41,6 +41,8 @@
     ]
   },
   "devDependencies": {
+    "@types/date-fns": "^2.6.0",
+    "date-fns": "^2.16.1",
     "node-sass": "^4.14.1"
   }
 }
