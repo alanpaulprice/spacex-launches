@@ -3,15 +3,15 @@ import React from 'react'
 interface ButtonProps
 {
 	children: React.ReactNode;
+	className?: string;
 	onClick: () => void;
 	borderRadiusLeft?: boolean;
 }
 
-export default function Button(props: ButtonProps) {
-	const { children, onClick, borderRadiusLeft } = props;
+export default function Button({ children, className, onClick, borderRadiusLeft }: ButtonProps) {
 	return (
 		<button
-			className={`button ${borderRadiusLeft && 'button--radius-left'}`}
+			className={`button ${className ? className : ''} ${borderRadiusLeft ? 'button--radius-left' : ''}`}
 			onClick={() => onClick()}>
 			{children}
 		</button>
