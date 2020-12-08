@@ -17,9 +17,13 @@
 }
 
 .app__left-column {
-	width: calc(40% - 1rem);
+	width: calc(40% - 2rem);
 }
 
 .app__right-column {
-	width: calc(60% - 1rem);
+	width: calc(60% - 2rem);
+}
+
+.app__main-image {
+	width: 100%;
 }
