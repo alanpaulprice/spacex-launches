@@ -1,0 +1,25 @@
+.app__main {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	padding: 2rem;
+}
+
+.app__filter-sort {
+	width: 100%;
+	margin-bottom: 1rem;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.app__filter-sort .button:last-child {
+	margin-left: 1rem;
+}
+
+.app__left-column {
+	width: calc(40% - 1rem);
+}
+
+.app__right-column {
+	width: calc(60% - 1rem);
+}
