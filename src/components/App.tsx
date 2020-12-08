@@ -4,7 +4,7 @@ import Button from './Button';
 import ResultsList from './ResultsList';
 import { ILaunchDataItem } from '../interfaces/ILaunchDataItem';
 import LaunchImage from '../assets/images/launch-home.png';
-import SelectIcon from '../assets/icons/select.png';
+import SelectIcon from '../assets/icons/select@2x.png';
 import SortIcon from '../assets/icons/sort.png';
 
 async function fetchLaunches()
