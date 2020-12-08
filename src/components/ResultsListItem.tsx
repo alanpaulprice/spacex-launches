@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface ResultsListItemProps
+interface IResultsListItemProps
 {
 	number: number;
 	launch: string;
@@ -8,7 +8,7 @@ interface ResultsListItemProps
 	rocket: string;
 }
 
-export default function ResultsListItem({number, launch, date, rocket}: ResultsListItemProps): JSX.Element {
+export default function ResultsListItem({number, launch, date, rocket}: IResultsListItemProps): JSX.Element {
 	return (
 		<li className="results-list-item">
 			<div className="results-list-item__number">

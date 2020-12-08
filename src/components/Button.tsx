@@ -1,6 +1,6 @@
 import React from 'react'
 
-interface ButtonProps
+interface IButtonProps
 {
 	children: React.ReactNode;
 	className?: string;
@@ -8,7 +8,7 @@ interface ButtonProps
 	borderRadiusLeft?: boolean;
 }
 
-export default function Button({ children, className, onClick, borderRadiusLeft }: ButtonProps): JSX.Element {
+export default function Button({ children, className, onClick, borderRadiusLeft }: IButtonProps): JSX.Element {
 	return (
 		<button
 			className={`button ${className ? className : ''} ${borderRadiusLeft ? 'button--radius-left' : ''}`}
