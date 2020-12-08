@@ -3,7 +3,7 @@ import Button from './Button';
 import HeaderImage from '../assets/images/spacex-logo.png';
 import ButtonIcon from '../assets/icons/refresh@3x.png';
 
-export default function Header() {
+export default function Header(): JSX.Element {
 	return (
 		<header className="header">
 			<div className="header__logo">
