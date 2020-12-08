@@ -8,7 +8,7 @@ interface ButtonProps
 	borderRadiusLeft?: boolean;
 }
 
-export default function Button({ children, className, onClick, borderRadiusLeft }: ButtonProps) {
+export default function Button({ children, className, onClick, borderRadiusLeft }: ButtonProps): JSX.Element {
 	return (
 		<button
 			className={`button ${className ? className : ''} ${borderRadiusLeft ? 'button--radius-left' : ''}`}
