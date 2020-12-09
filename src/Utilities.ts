@@ -17,3 +17,14 @@ export function sortLaunchesByDate(launches: Array<ILaunchDataItem>, descending:
 		:
 		launches.sort((a, b) => a.launch_date_unix - b.launch_date_unix);
 }
+
+export function removeArrayDuplicates<T>(array: Array<T>): Array<T> {
+	return [...new Set(array)];
+}
+	
+export function sortNumbers(array: Array<number>, descending: boolean): Array<number> {
+	return descending ?
+		array.sort((a, b) => b - a)
+		:
+	 	array.sort((a, b) => a - b);
+}
