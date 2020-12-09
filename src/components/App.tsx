@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { fetchLaunches, sortLaunchesByDate } from '../Utilities';
 import Header from './Header';
 import Button from './Button';
 import ResultsList from './ResultsList';
@@ -6,17 +7,6 @@ import { ILaunchDataItem } from '../interfaces/ILaunchDataItem';
 import LaunchImage from '../assets/images/launch-home.png';
 import SelectIcon from '../assets/icons/select@2x.png';
 import SortIcon from '../assets/icons/sort.png';
-
-async function fetchLaunches()
-{
-	try {
-		const response = await fetch('https:api.spacexdata.com/v3/launches');
-		const json = await response.json();
-		return json;
-	} catch(error) {
-		console.error(`Error fetching launches: ${error}`);
-	}
-}
 
 export default function App(): JSX.Element {
 	const [launches, setLaunches] = useState<Array<ILaunchDataItem>>([]);
@@ -32,14 +22,6 @@ export default function App(): JSX.Element {
 
 	function toggleSortAscending(): void {
 		setSortDateDescending(!sortDateDescending);
-	}
-
-	function sortLaunches(launches: Array<ILaunchDataItem>): Array<ILaunchDataItem> {
-		if (sortDateDescending) {
-			return launches.sort((a, b) => b.launch_date_unix - a.launch_date_unix);
-		} else {
-			return launches.sort((a, b) => a.launch_date_unix - b.launch_date_unix);
-		}
 	}
 
 	return (
@@ -60,7 +42,7 @@ export default function App(): JSX.Element {
 					<img className="app__main-image" src={LaunchImage} alt="A rocket launch in progress" />
 				</div>
 				<div className="app__right-column">
-					<ResultsList launches={sortLaunches(launches)} />
+					<ResultsList launches={sortLaunchesByDate(launches, sortDateDescending)} />
 				</div>
 			</main>
 		</div>
