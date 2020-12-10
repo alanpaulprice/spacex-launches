@@ -12,7 +12,7 @@ export default function Button({ children, className, onClick, borderRadiusLeft 
 	return (
 		<button
 			className={`button ${className ? className : ''} ${borderRadiusLeft ? 'button--radius-left' : ''}`}
-			onClick={() => onClick()}>
+			onClick={onClick}>
 			{children}
 		</button>
 	);
