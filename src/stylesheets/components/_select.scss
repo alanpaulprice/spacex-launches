@@ -1,0 +1,54 @@
+.select {
+    position: relative;
+
+    ::-webkit-scrollbar {
+        width: .5rem;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: $primary-blue;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $color-white;
+        border: 1px solid $primary-blue;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+    //   background: $primary-blue-lighter;
+    }
+}
+
+.select__options {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 100%;
+    max-height: 20rem;
+    overflow-y: auto;
+    list-style-type: none;
+    background: $primary-blue;
+    box-shadow: 0px 2px 5px hsla(0, 0%, 0%, .25);
+    transform-origin: top center;
+    animation: scaleY0To1 .25s ease;
+}
+
+.select__option {
+    transform: scaleY(0);
+    animation: scaleY0To1 .125s .25s ease forwards;
+}
+
+.select__option-button {
+    width: 100%;
+    justify-content: center;
+}
+
+@keyframes scaleY0To1 {
+    0% {
+        transform: scaleY(0);
+    }
+    
+    100% {
+        transform: scaleY(1);
+    }
+}
