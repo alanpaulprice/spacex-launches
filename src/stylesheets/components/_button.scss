@@ -8,6 +8,14 @@
 	cursor: pointer;
 }
 
+.button:hover {
+	background-color: $primary-blue-lighter;
+}
+
+.button:active {
+	background-color: $primary-blue;
+}
+
 .button.button--radius-left {
 	border-top-left-radius: 9999px;
 	border-bottom-left-radius: 9999px;
