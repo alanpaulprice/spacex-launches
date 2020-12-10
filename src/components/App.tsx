@@ -4,6 +4,7 @@ import Header from './Header';
 import Button from './Button';
 import Select from './Select';
 import ResultsList from './ResultsList';
+import Loading from './Loading';
 import { ILaunchDataItem } from '../interfaces/ILaunchDataItem';
 import LaunchImage from '../assets/images/launch-home.png';
 import SelectIcon from '../assets/icons/select@2x.png';
@@ -13,13 +14,17 @@ export default function App(): JSX.Element {
 	const [launches, setLaunches] = useState<Array<ILaunchDataItem>>([]);
 	const [sortDateDescending, setSortDateDescending] = useState<boolean>(false);
 	const [launchYearFilterParameter, setLaunchYearFilterParameter] = useState<string>('All');
+	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
 		updateLaunches();
 	}, []);
 
 	function updateLaunches(): void {
-		fetchLaunches().then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]));
+		setLoading(true);
+		fetchLaunches()
+			.then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]))
+			.then(() => setLoading(false));
 	}
 
 	function toggleSortAscending(): void {
@@ -65,7 +70,11 @@ export default function App(): JSX.Element {
 					<img className="app__main-image" src={LaunchImage} alt="A rocket launching" />
 				</div>
 				<div className="app__right-column">
-					<ResultsList launches={buildResultsListData(launches)} />
+					{loading ?
+						<Loading />
+						:
+						<ResultsList launches={buildResultsListData(launches)} />
+					}
 				</div>
 			</main>
 		</div>
