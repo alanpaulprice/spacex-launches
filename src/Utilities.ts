@@ -18,6 +18,13 @@ export function sortLaunchesByDate(launches: Array<ILaunchDataItem>, descending:
 		launches.sort((a, b) => a.launch_date_unix - b.launch_date_unix);
 }
 
+export function filterLaunchesByYear(launches: Array<ILaunchDataItem>, year: string) {
+	return year === 'All' ?
+		launches
+		:
+		launches.filter((launch) => launch.launch_year === year);
+}
+
 export function removeArrayDuplicates<T>(array: Array<T>): Array<T> {
 	return [...new Set(array)];
 }
