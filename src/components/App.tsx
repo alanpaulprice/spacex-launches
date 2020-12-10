@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
 	}
 
 	function buildFilterDropdownListOptions(launches: Array<ILaunchDataItem>): Array<string> {
-		const years = launches.map((launch: ILaunchDataItem): number => parseInt(launch.launch_year));
+		const years: Array<number> = launches.map((launch: ILaunchDataItem): number => parseInt(launch.launch_year));
 		const unique: Array<number> = removeArrayDuplicates(years);
 		const sorted: Array<number> = sortNumbers(unique, true);
 		const strings: Array<string> = sorted.map((year: number): string => String(year));
