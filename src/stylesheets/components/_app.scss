@@ -20,6 +20,13 @@
 	margin-left: 1rem;
 }
 
+.app__right-column,
+.app__left-column {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .app__left-column {
 	width: calc(40% - 2rem);
 }
