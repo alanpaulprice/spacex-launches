@@ -3,7 +3,7 @@ import { ILaunchDataItem } from './interfaces/ILaunchDataItem';
 export async function fetchLaunches()
 {
 	try {
-		const response = await fetch('https:api.spacexdata.com/v3/launches');
+		const response = await fetch('https://api.spacexdata.com/v3/launches');
 		const json = await response.json();
 		const mapped = json.map((item: any) => (
 			{
