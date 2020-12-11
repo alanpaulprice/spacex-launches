@@ -1,0 +1,37 @@
+@mixin media($breakpoint) {
+	@if $breakpoint == sm {
+		@media screen and (min-width: $media-sm) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == md {
+		@media screen and (min-width: $media-md) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == lg {
+		@media screen and (min-width: $media-lg) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == xl {
+		@media screen and (min-width: $media-xl) {
+			@content;
+		}
+	}
+    
+    @if $breakpoint == xxl {
+		@media screen and (min-width: $media-xxl) {
+			@content;
+		}
+	}
+
+	@if $breakpoint == hov {
+		@media screen and (hover: hover) {
+			@content;
+		}
+	}
+}
