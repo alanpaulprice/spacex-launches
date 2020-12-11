@@ -12,7 +12,7 @@ interface IResultsListItemProps
 export default function ResultsListItem({number, launch, date, rocket}: IResultsListItemProps): JSX.Element {
 	return (
 		<li className="results-list-item">
-			<div className="results-list-item__number">
+			<div className="results-list-item__flight-number">
 				#{number}
 			</div>
 			<div className="results-list-item__launch">
