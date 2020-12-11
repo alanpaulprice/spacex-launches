@@ -11,10 +11,10 @@ export default function ResultsList({ launches }: IResultsListProps): JSX.Elemen
 		<ul className="results-list">
 			{launches.map((launch, index) => <ResultsListItem
 				key={index}
-				number={launch.flight_number}
-				launch={launch.mission_name}
-				date={launch.launch_date_unix}
-				rocket={launch.rocket.rocket_name} />)}
+				flightNumber={launch.flightNumber}
+				launch={launch.missionName}
+				date={launch.launchDateUnix}
+				rocket={launch.rocketName} />)}
 		</ul>
 	);
 }

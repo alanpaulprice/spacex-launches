@@ -3,17 +3,17 @@ import { format } from 'date-fns';
 
 interface IResultsListItemProps
 {
-	number: number;
+	flightNumber: number;
 	launch: string;
 	date: number;
 	rocket: string;
 }
 
-export default function ResultsListItem({number, launch, date, rocket}: IResultsListItemProps): JSX.Element {
+export default function ResultsListItem({ flightNumber, launch, date, rocket }: IResultsListItemProps): JSX.Element {
 	return (
 		<li className="results-list-item">
 			<div className="results-list-item__flight-number">
-				#{number}
+				#{flightNumber}
 			</div>
 			<div className="results-list-item__launch">
 				{launch}
