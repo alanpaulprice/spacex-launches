@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchLaunches, sortLaunchesByDate, filterLaunchesByYear } from '../Utilities';
+import { fetchLaunches } from '../Utilities';
 import Header from './Header';
 import Button from './Button';
 import Filter from './Filter';
