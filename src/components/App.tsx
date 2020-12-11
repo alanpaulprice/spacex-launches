@@ -34,12 +34,6 @@ export default function App(): JSX.Element {
 		setLaunchYearFilterParameter(option);
 	}
 
-	function buildResultsListData(launches: Array<ILaunchDataItem>): Array<ILaunchDataItem> {
-		const filtered = filterLaunchesByYear(launches, launchYearFilterParameter);
-		const sorted = sortLaunchesByDate(filtered, sortDateDescending);
-		return sorted;
-	}
-
 	return (
 		<div className="app">
 			<Header updateLaunches={updateLaunches} />
@@ -58,7 +52,10 @@ export default function App(): JSX.Element {
 					{loading ?
 						<Loading />
 						:
-						<ResultsList launches={buildResultsListData(launches)} />
+						<ResultsList
+							launches={launches}
+							sortDateDescending={sortDateDescending}
+							launchYearFilterParameter={launchYearFilterParameter} />
 					}
 				</div>
 			</main>
