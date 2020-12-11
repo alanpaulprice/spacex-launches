@@ -38,17 +38,17 @@ export default function App(): JSX.Element {
 		<div className="app">
 			<Header updateLaunches={updateLaunches} />
 			<main className="app__main">
-				<div className="app__filter-sort">
+				<div className="app__filter-sort-container">
 					<Filter launches={launches} updateFilter={updateFilter} />
-					<Button onClick={toggleSortAscending}>
+					<Button className="app__sort-button" onClick={toggleSortAscending}>
 						Sort {sortDateDescending ? 'Ascending' : 'Descending'}
 						<img className="header__logo-image" src={SortIcon} alt="Sort" />
 					</Button>
 				</div>
-				<div className="app__left-column">
-					<img className="app__main-image" src={LaunchImage} alt="A rocket launching" />
+				<div className="app__image-container">
+					<img className="app__image" src={LaunchImage} alt="A rocket launching" />
 				</div>
-				<div className="app__right-column">
+				<div className="app__list-container">
 					{loading ?
 						<Loading />
 						:

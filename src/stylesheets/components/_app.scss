@@ -1,38 +1,62 @@
 .app {
 	max-width: 90rem;
+	margin: 0 auto;
 }
 
 .app__main {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	padding: 2rem;
+	padding: .5rem;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-areas:
+		'header header'
+		'image image'
+		'filterSort filterSort'
+		'list list';
+
+	@include media(md) {
+		padding: 1rem;
+	}
+	
+	@include media(xxl) {
+		padding: 2rem;
+		grid-template-areas:
+		'header header'
+		'filterSort filterSort'
+		'image list';
+	}
 }
 
-.app__filter-sort {
-	width: 100%;
+.app__filter-sort-container {
+	grid-area: filterSort;
 	margin-bottom: 1rem;
 	display: flex;
 	justify-content: flex-end;
 }
 
-.app__filter-sort > .button:last-child {
+.app__sort-button {
 	margin-left: 1rem;
+	min-width: 10.625rem; // prevents width changing when text changes
 }
 
-.app__right-column {
+.app__image-container {
+	grid-area: image;
+	padding: 2rem;
+	display: none;
+	justify-content: center;
+	align-items: flex-start;
+	
+	@include media(xxl) {
+		padding: 0 2rem 0 0;
+		display: flex;
+	}
+}
+
+.app__image {
+	width: 100%;
+}
+
+.app__list-container {
+	grid-area: list;
 	display: flex;
 	justify-content: center;
-}
-
-.app__left-column {
-	width: calc(40% - 2rem);
-}
-
-.app__right-column {
-	width: calc(60% - 2rem);
-}
-
-.app__main-image {
-	width: 100%;
 }
