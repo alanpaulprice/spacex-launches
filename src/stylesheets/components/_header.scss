@@ -2,15 +2,27 @@
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	grid-area: header;
 }
 
 .header__logo {
-	padding: 2rem 0;
-	margin-left: 2.5rem;
+	margin: 1rem 1rem;
+	display: flex;
+	flex-direction: column;
 	font-size: 1.25rem;
 	text-transform: uppercase;
+	
+	@include media(md) {
+		margin: 2rem 2.5rem;
+		flex-direction: row;
+	}
 }
 
 .header__logo-image {
 	height: 1.5rem;
+	margin-bottom: .25rem;
+
+	@include media(md) {
+		margin-bottom: 0;
+	}
 }
