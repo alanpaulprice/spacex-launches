@@ -1,8 +1,12 @@
 .loading {
-	align-self: center;
+	margin-top: 2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+
+	@include media(xxl) {
+		margin-top: 4rem;
+	}
 }
 
 .loading__spinner {
