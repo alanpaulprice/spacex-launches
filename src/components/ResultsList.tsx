@@ -7,11 +7,11 @@ interface IResultsListProps
 {
 	launches: Array<ILaunchDataItem>
 	sortDateDescending: boolean;
-	launchYearFilterParameter: string;
+	filterYear: string;
 }
-export default function ResultsList({ launches, sortDateDescending, launchYearFilterParameter }: IResultsListProps): JSX.Element {
+export default function ResultsList({ launches, sortDateDescending, filterYear }: IResultsListProps): JSX.Element {
 	function buildResultsListData(launches: Array<ILaunchDataItem>): Array<ILaunchDataItem> {
-		const filtered = filterLaunchesByYear(launches, launchYearFilterParameter);
+		const filtered = filterLaunchesByYear(launches, filterYear);
 		const sorted = sortLaunchesByDate(filtered, sortDateDescending);
 		return sorted;
 	}

@@ -12,7 +12,7 @@ import SortIcon from '../assets/icons/sort.png';
 export default function App(): JSX.Element {
 	const [launches, setLaunches] = useState<Array<ILaunchDataItem>>([]);
 	const [sortDateDescending, setSortDateDescending] = useState<boolean>(false);
-	const [launchYearFilterParameter, setLaunchYearFilterParameter] = useState<string>('All');
+	const [filterYear, setFilterYear] = useState<string>('All');
 	const [loading, setLoading] = useState<boolean>(true)
 
 	useEffect(() => {
@@ -31,7 +31,7 @@ export default function App(): JSX.Element {
 	}
 
 	function updateFilter(option: string): void {
-		setLaunchYearFilterParameter(option);
+		setFilterYear(option);
 	}
 
 	return (
@@ -55,7 +55,7 @@ export default function App(): JSX.Element {
 						<ResultsList
 							launches={launches}
 							sortDateDescending={sortDateDescending}
-							launchYearFilterParameter={launchYearFilterParameter} />
+							filterYear={filterYear} />
 					}
 				</div>
 			</main>
