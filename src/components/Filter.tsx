@@ -11,7 +11,7 @@ interface IFilterProps {
 
 export default function Filter({ launches, updateFilter }: IFilterProps): JSX.Element {
 	function buildFilterDropdownListOptions(launches: Array<ILaunchDataItem>): Array<string> {
-		const years: Array<number> = launches.map((launch: ILaunchDataItem): number => parseInt(launch.launchYear));
+		const years: Array<number> = launches.map(({ year }: ILaunchDataItem): number => parseInt(year));
 		const unique: Array<number> = removeArrayDuplicates(years);
 		const sorted: Array<number> = sortNumbers(unique, true);
 		const strings: Array<string> = sorted.map((year: number): string => String(year));

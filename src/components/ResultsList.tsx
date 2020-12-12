@@ -16,14 +16,21 @@ export default function ResultsList({ launches, sortDateDescending, filterYear }
 		return sorted;
 	}
 
+	function buildResultsListItems(launches: Array<ILaunchDataItem>): Array <JSX.Element> {
+		return buildResultsListData(launches)
+			.map(({ number, name, dateUnix, rocket }: ILaunchDataItem, index: number) => (
+			<ResultsListItem
+				key={index}
+				number={number}
+				launch={name}
+				dateUnix={dateUnix}
+				rocket={rocket} />
+			))
+	}
+
 	return (
 		<ul className="results-list">
-			{buildResultsListData(launches).map((launch: ILaunchDataItem, index: number) => <ResultsListItem
-				key={index}
-				flightNumber={launch.flightNumber}
-				launch={launch.missionName}
-				date={launch.launchDateUnix}
-				rocket={launch.rocketName} />)}
+			{buildResultsListItems(launches)}
 		</ul>
 	);
 }

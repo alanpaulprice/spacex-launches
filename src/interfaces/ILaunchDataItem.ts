@@ -1,7 +1,7 @@
 export interface ILaunchDataItem {
-	flightNumber: number;
-	missionName: string;
-	launchDateUnix: number;
-	launchYear: string;
-	rocketName: string;
+	number: number;
+	name: string;
+	dateUnix: number;
+	year: string;
+	rocket: string;
 }
