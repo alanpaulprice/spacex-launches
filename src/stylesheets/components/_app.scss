@@ -5,6 +5,7 @@
 
 .app__main {
 	padding: .5rem;
+	margin-right: 0;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-areas:
@@ -12,18 +13,19 @@
 		'image image'
 		'filterSort filterSort'
 		'list list';
-
-	@include media(md) {
-		padding: 1rem;
-	}
-	
-	@include media(xxl) {
+		
+		@include media(md) {
+			padding: 1rem 2rem;
+		}
+		
+		@include media(xxl) {
 		padding: 2rem;
+		margin-right: 4rem;
 		grid-template-areas:
-		'header header'
-		'filterSort filterSort'
-		'image list';
-	}
+			'header header'
+			'filterSort filterSort'
+			'image list';
+		}
 }
 
 .app__filter-sort-container {
