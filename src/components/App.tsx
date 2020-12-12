@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchLaunches } from '../Utilities';
+import { fetchLaunchData } from '../Utilities';
 import Header from './Header';
 import Button from './Button';
 import Filter from './Filter';
@@ -21,7 +21,7 @@ export default function App(): JSX.Element {
 
 	function updateLaunches(): void {
 		setLoading(true);
-		fetchLaunches()
+		fetchLaunchData()
 			.then((launches: Array<ILaunchDataItem>) => setLaunches([...launches]))
 			.then(() => setLoading(false));
 	}

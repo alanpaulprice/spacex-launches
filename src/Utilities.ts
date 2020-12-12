@@ -1,6 +1,6 @@
 import { ILaunchDataItem } from './interfaces/ILaunchDataItem';
 
-export async function fetchLaunches() {
+export async function fetchLaunchData() {
 	try {
 		const response = await fetch('https://api.spacexdata.com/v3/launches');
 		const json = await response.json();
