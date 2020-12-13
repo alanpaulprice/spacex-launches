@@ -20,6 +20,7 @@
 
 .header__logo-image {
 	height: 1.5rem;
+	margin-right: -1rem;
 	margin-bottom: .25rem;
 
 	@include media(md) {
