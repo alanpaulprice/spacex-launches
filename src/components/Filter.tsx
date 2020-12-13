@@ -24,7 +24,7 @@ export default function Filter({ launches, updateFilter }: IFilterProps): JSX.El
 			dropdownListOptions={buildFilterDropdownListOptions(launches)}
 			onOptionSelect={(option: string) => updateFilter(option)}>
 			Filter by Year
-			<img className="header__logo-image" src={SelectIcon} alt="Select" />
+			<img src={SelectIcon} alt="Select" />
 		</Select>
 	);
 }

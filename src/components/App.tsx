@@ -42,7 +42,7 @@ export default function App(): JSX.Element {
 					<Filter launches={launches} updateFilter={updateFilter} />
 					<Button className="app__sort-button" onClick={toggleSortAscending}>
 						Sort {sortDateDescending ? 'Ascending' : 'Descending'}
-						<img className="header__logo-image" src={SortIcon} alt="Sort" />
+						<img src={SortIcon} alt="Sort" />
 					</Button>
 				</div>
 				<div className="app__image-container">
